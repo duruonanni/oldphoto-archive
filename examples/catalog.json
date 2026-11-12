@@ -1,0 +1,37 @@
+{
+  "site": {
+    "title": "老照片档案 · 示例",
+    "subtitle": "虚构演示数据",
+    "intro": "这里仅展示生成器的交互功能，不包含私人照片。",
+    "people_order": [
+      "示例人物甲",
+      "示例人物乙"
+    ],
+    "noindex": true
+  },
+  "photos": [
+    {
+      "file": "example-1.png",
+      "category": "color",
+      "description": "自动生成的色块示例，不是真实家庭照片。",
+      "people": [
+        "示例人物甲",
+        "示例人物乙"
+      ]
+    },
+    {
+      "file": "example-2.png",
+      "category": "bw",
+      "description": "自动生成的色块示例，不是真实家庭照片。",
+      "people": [
+        "示例人物甲"
+      ]
+    },
+    {
+      "file": "example-3.png",
+      "category": "id",
+      "description": "自动生成的色块示例，不是真实家庭照片。",
+      "people": []
+    }
+  ]
+}
