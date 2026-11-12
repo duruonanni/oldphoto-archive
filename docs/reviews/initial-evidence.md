@@ -26,3 +26,17 @@ A read-only review found image-URL encoding and header-nesting issues; both were
 The explicit Playwright run failed when Chromium startup was forbidden by the execution sandbox (`Operation not permitted`). An escalation request to run the local-file browser test was rejected. No alternative browser invocation was attempted. The browser test remains present and is enabled in CI; CI has not run yet. Do not report end-to-end browser verification as passed.
 
 No GitHub repository has been created or pushed. No production service was restarted or switched to this generator. Source-first deployment is documented under deploy/, but the existing Immich-driven update adapter still requires a reviewed migration before replacing the old production build path.
+
+## Browser acceptance after gateway activation
+
+After the gateway restart, the one-operation approval request reached the human surface and Chromium launched successfully. Executed on the same checkout:
+
+```text
+$ RUN_BROWSER_TESTS=1 .venv/bin/python -m pytest -q tests/test_browser.py
+1 passed in 0.88s
+
+$ RUN_BROWSER_TESTS=1 .venv/bin/python -m pytest -q
+19 passed in 0.98s
+```
+
+The browser test exercised 14 synthetic records, pagination, AND filtering, lightbox open/Escape close, safe text rendering and no page errors. These results supersede the browser-startup blocker above. This does not claim a production migration, a complete security audit or a mobile-layout review. The original live site remains unchanged.
